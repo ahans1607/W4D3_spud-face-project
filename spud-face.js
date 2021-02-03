@@ -11,21 +11,33 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // console.log(submitForm);
 
   licenseForm.addEventListener("focus", event => {
-    event.target.style.backgroundcolor = 'lightgreen'
-
+    event.target.style.backgroundColor = 'lightgreen'
   }, true);
+
   licenseForm.addEventListener("blur", event => {
+    event.target.style.backgroundColor = ""
+  }, true);
 
 
-  });
+
   licenseForm.addEventListener("input", event => {
-
+    for (let i = 0; i < license.length; i++){
+      let licenseField = license[i]
+        if(licenseField.id.includes(event.target.id)){
+          licenseField.innerHTML = event.target.value;
+        }
+    }
 
   });
+
+
+
   licenseForm.addEventListener("submit", event => {
 
 
   });
+
+
   licenseForm.addEventListener("click", event => {
 
   });
@@ -55,7 +67,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   //     }
 
 
-}
+
 
 
 // licenseForm.addEventListener("submit", event => {

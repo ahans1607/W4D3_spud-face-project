@@ -1,11 +1,11 @@
 window.addEventListener("DOMContentLoaded", (event) => {
 
-  console.log("spudhead");
   const licenseForm = document.getElementById("drivers-license-form")
   console.log(licenseForm);
-
-  const textElements = document.querySelectorAll(".license__info");
-  console.log(textElements);
+  let formfields = document.getElementsByClassName("form__input");
+  console.log(formfields);
+  const license = document.querySelectorAll(".license__info");
+  console.log(license);
   const submitForm = document.getElementsByClassName("form_submit");
   licenseForm.addEventListener("submit", event => {
     console.log("submitted")

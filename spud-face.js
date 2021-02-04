@@ -21,11 +21,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 
   licenseForm.addEventListener("input", event => {
-    for (let i = 0; i < license.length; i++){
+    for (let i = 0; i < license.length; i++) {
       let licenseField = license[i]
-        if(licenseField.id.includes(event.target.id)){
-          licenseField.innerHTML = event.target.value;
-        }
+      if (licenseField.id.includes(event.target.id)) {
+        licenseField.innerHTML = event.target.value;
+      }
+    }
+    for (let i = 0; i < formFields.length; i++) {
+      let formField = formFields[i];
+      let licenseNum = event.target.placeholder;
+      let licenseNumConfirm = formFields[i].placeholder;
+      if (licenseNum !== licenseNumConfirm) {
+        event.target.style.backgroundColor = "lightcoral";
+      }
     }
 
   });
@@ -33,7 +41,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 
   licenseForm.addEventListener("submit", event => {
-
 
   });
 
